@@ -9,7 +9,7 @@ namespace elective_2_gradesheet.Data.Entities
         [Key]
         public int Id { get; set; }
 
-        public string GetStudentNumber()  => Email?.Split('@')[0] ?? string.Empty;
+        public string GetStudentNumber() => Email?.Split('@')[0] ?? string.Empty;
 
         [Required]
         public string? LastName { get; set; }

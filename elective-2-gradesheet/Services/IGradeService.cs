@@ -327,7 +327,7 @@ namespace elective_2_gradesheet.Services
                 var student = await _context.Students
                     .AsNoTracking() // Use AsNoTracking for read-only operations
                    .FirstOrDefaultAsync(s => s.Email == record.Email);
-                   
+
 
                 if (student == null)
                 {
@@ -351,7 +351,7 @@ namespace elective_2_gradesheet.Services
                 }
 
                 // Create the new activity record.
-                if(_context.Activities.Any(a => a.StudentId == student.Id && a.ActivityName == record.ActivityName && a.Period == model.GradingPeriod))
+                if (_context.Activities.Any(a => a.StudentId == student.Id && a.ActivityName == record.ActivityName && a.Period == model.GradingPeriod))
                 {
                     // If the activity already exists, we can skip creating it again.
                     continue;

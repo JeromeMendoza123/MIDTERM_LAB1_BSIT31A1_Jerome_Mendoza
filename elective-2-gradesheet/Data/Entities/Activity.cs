@@ -34,7 +34,7 @@ namespace elective_2_gradesheet.Data.Entities
 
         public double Points { get; set; }
         public string? GithubLink { get; set; } = string.Empty;
-       
+
 
         [Required]
         public string Status { get; set; }

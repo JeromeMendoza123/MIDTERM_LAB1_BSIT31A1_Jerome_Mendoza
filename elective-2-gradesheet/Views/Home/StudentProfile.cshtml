@@ -15,6 +15,13 @@
             <p><strong>Section:</strong> @Model.SectionName</p>
         </div>
     </div>
+    
+    <div class="mb-4">
+        <a asp-action="Records" asp-controller="Home" class="btn btn-secondary rounded-pill shadow-sm">
+            ← Back to Records
+        </a>
+    </div>
+
 
     <h4 class="mb-3">Activities</h4>
 
@@ -256,7 +263,7 @@
 
                 activityIdInput.value = activityId;
                 activityNameP.textContent = activityName;
-                activityNameHiddenInput.value = activityName; 
+                activityNameHiddenInput.value = activityName;
                 pointsInput.value = points;
 
                 // Set period dropdown
@@ -334,14 +341,14 @@
             var toastElement = document.getElementById('liveToast');
             var toastHeader = document.getElementById('toastHeader');
             var toastBody = document.getElementById('toastBody');
-            
+
             // Clear previous classes
             toastElement.classList.remove('text-bg-success', 'text-bg-info', 'text-bg-danger');
 
             toastBody.textContent = message;
             toastElement.classList.add('text-bg-' + type);
             // Set header text (e.g., "Success", "Info", "Danger")
-            toastHeader.textContent = type.charAt(0).toUpperCase() + type.slice(1); 
+            toastHeader.textContent = type.charAt(0).toUpperCase() + type.slice(1);
 
             var toast = new bootstrap.Toast(toastElement);
             toast.show();
@@ -374,7 +381,7 @@
                             body: formData,
                             headers: {
                                 // Include anti-forgery token from the hidden input
-                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value 
+                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
                             }
                         });
 
